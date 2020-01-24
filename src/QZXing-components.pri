@@ -448,14 +448,12 @@ symbian {
     isEmpty(PREFIX) {
         maemo5 {
             target.path = /opt/usr/lib
-        } else {
-            target.path = /usr/lib
         }
     }
 
     DEFINES += NOFMAXL
 
-	# Installation
+    # Installation
 	headers.files = qzxing.h QZXing_global.h
 	headers.path = $$PREFIX/include
 	target.path = $$PREFIX/lib
@@ -464,8 +462,8 @@ symbian {
 	# pkg-config support
 	CONFIG += create_pc create_prl no_install_prl
 	QMAKE_PKGCONFIG_DESTDIR = pkgconfig
-	QMAKE_PKGCONFIG_LIBDIR = ${prefix}/lib
-	QMAKE_PKGCONFIG_INCDIR = ${prefix}/include
+	QMAKE_PKGCONFIG_LIBDIR = $$PREFIX/lib
+	QMAKE_PKGCONFIG_INCDIR = $$PREFIX/include
 
 	unix:QMAKE_CLEAN += -r pkgconfig lib$${TARGET}.prl
 }
