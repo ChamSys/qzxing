@@ -1,4 +1,6 @@
 #include "ImageHandler.h"
+
+#include <QApplication>
 #include <QImage>
 #include <QPainter>
 #include <QDebug>
