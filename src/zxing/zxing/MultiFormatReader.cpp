@@ -96,6 +96,11 @@ void MultiFormatReader::enableReaders(zxing::DecodeHints hints, bool allowAll)
       hints.containsFormat(BarcodeFormat::RSS_14) ||
       hints.containsFormat(BarcodeFormat::RSS_EXPANDED);
 
+  // Supress unused variable warning
+  (void)allowAll;
+  (void)tryHarder;
+  (void)addOneDReader;
+
   #ifdef ENABLE_DECODER_1D_BARCODES
     if ((allowAll || addOneDReader) && !tryHarder) {
       readers_.push_back(Ref<Reader>(new zxing::oned::MultiFormatOneDReader(hints)));
